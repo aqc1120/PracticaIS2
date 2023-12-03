@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from . import models
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Opinion
+from .models import Opinion, Cruise
 from .forms import OpinionForm
 
 # Create your views here.
@@ -33,9 +33,9 @@ def opinion(request):
         form = OpinionForm()
 
     opinions = Opinion.objects.all()
+    cruises = Cruise.objects.all()
 
-    return render(request, 'opinion.html', {'form': form, 'opinions': opinions})
-
+    return render(request, 'opinion.html', {'form': form, 'opinions': opinions, 'cruises': cruises})
 
 class DestinationDetailView(generic.DetailView):
     template_name = 'destination_detail.html'
