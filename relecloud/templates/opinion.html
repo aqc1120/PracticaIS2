@@ -1,0 +1,20 @@
+<!-- opinion.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+Opiniones sobre Cruceros - ReleCloud
+{% endblock title %}
+
+{% block content %}
+
+
+    <!-- Formulario para agregar nueva opinión -->
+    <h2>Añadir nueva opinión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit">Enviar opinión</button>
+    </form>
+
+{% endblock content %}
+
