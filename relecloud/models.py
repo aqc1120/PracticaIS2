@@ -49,7 +49,13 @@ class InfoRequest(models.Model):
     )
     cruise = models.ForeignKey(
         Cruise,
-        on_delete=models.PROTECT
+        on_delete=models.PROTECTs
     )
 
+class Opinion(models.Model):
+    name = models.CharField(max_length=100)
+    cruise = models.CharField(max_length=100)
+    opinion = models.TextField()
 
+    def __str__(self):
+        return f"{self.name} - {self.cruise}"
