@@ -49,7 +49,7 @@ class InfoRequest(models.Model):
     )
     cruise = models.ForeignKey(
         Cruise,
-        on_delete=models.PROTECTs
+        on_delete=models.PROTECT
     )
 
 class Opinion(models.Model):
